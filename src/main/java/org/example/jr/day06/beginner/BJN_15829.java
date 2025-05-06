@@ -15,11 +15,11 @@ public class BJN_15829 {
         st = new StringTokenizer(br.readLine());
 
         char[] cArr = st.nextToken().toCharArray();
-        long sum = 0;
+        BigInteger sum = new BigInteger("0");
 
         for(int i=0; i<n; i++){
             int num = cArr[i]-96;
-            sum+= (long) (num*Math.pow(31,i));
+            sum = sum.add(BigInteger.valueOf(31).pow(i).multiply(BigInteger.valueOf(num)));
 
         }
 
