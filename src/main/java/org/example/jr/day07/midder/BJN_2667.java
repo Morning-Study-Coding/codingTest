@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class BJN_2667 {
 
-    static int[][] dir = new int[][]{{-1,0},{0,1},{0,-1},{-1,0}};
+    static int[][] dir = new int[][]{{-1,0},{0,1},{1,0},{0,-1}};
 
     static int[][] grid;
     static boolean[][] visited;
@@ -47,7 +47,7 @@ public class BJN_2667 {
             }
         }
 
-
+        System.out.println(result.size());
         for (Integer i : result.stream().sorted().collect(Collectors.toList())) {
             System.out.println(i);
         }
@@ -64,8 +64,8 @@ public class BJN_2667 {
                 int x = dir[0];
                 int y = dir[1];
 
-                int newX = loc[0]-x;
-                int newY = loc[1]-y;
+                int newX = loc[0]+x;
+                int newY = loc[1]+y;
 
                 boolean isExist = isAvailable(newX,newY);
                 if(isExist){
