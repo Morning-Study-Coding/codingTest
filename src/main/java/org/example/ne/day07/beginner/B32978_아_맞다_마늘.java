@@ -7,6 +7,10 @@ import java.util.*;
 
 public class B32978_아_맞다_마늘 {
     public static void main(String[] args) throws IOException {
+        app1();
+    }
+
+    static void app1() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         String[] ingredients = br.readLine().split(" ");
@@ -27,7 +31,7 @@ public class B32978_아_맞다_마늘 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    static void app2() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         String[] ingredients = br.readLine().split(" ");
@@ -43,7 +47,7 @@ public class B32978_아_맞다_마늘 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    static void app3() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         String[] ingredients = br.readLine().split(" ");
@@ -63,7 +67,7 @@ public class B32978_아_맞다_마늘 {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    static void app4() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         String[] ingredients = br.readLine().split(" ");
