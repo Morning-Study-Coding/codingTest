@@ -83,13 +83,13 @@ public class BJN_1018 {
         int startWRepaintCnt = 0;
         int startBRepaintCnt = 0;
 
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+        for (int i = startX; i < startX+8; i++) {
+            for (int j = startY; j < startY+8; j++) {
                 int expectStartW = ((i + j) % 2 == 0) ? 0 : 1;
                 int expectStartB = ((i + j) % 2 == 0) ? 1 : 0;
 
-                if (grid[startX + i][startY + j] != expectStartW) startWRepaintCnt++;
-                if (grid[startX + i][startY + j] != expectStartB) startBRepaintCnt++;
+                if (grid[i][j] != expectStartW) startWRepaintCnt++;
+                if (grid[i][j] != expectStartB) startBRepaintCnt++;
             }
         }
 
