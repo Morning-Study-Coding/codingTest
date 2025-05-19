@@ -27,30 +27,23 @@ public class B1051_숫자_정사각형 {
             }
         }
 
-        int maxIdxDiff = 1; // 가장 큰 차 저장
-        int result = 1;
+        int maxSize = 1;
 
         /* 그리드 전체 탐색 */
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
-                int num = grid[i][j];   // 탐색 대상 숫자
-                if (i + maxIdxDiff < N && j + maxIdxDiff < M) { // 그리드에 가장 큰 차 이상의 인덱스가 존재할 경우에만
-                    for (int k = j + maxIdxDiff; k < M; k++) {   // maxIdxDiff 이후부터 탐색
-                        if (grid[i][k] == num) {    // 같은 숫자 발견
-                            int idxDiff = k - j;
-                            /* 밑변 X좌표 유효성 && 값 체크 */
-                            int downX = i + idxDiff;
-                            if (downX < N && grid[downX][j] == num && grid[downX][k] == num) {
-                                maxIdxDiff = idxDiff;
-                                int length = idxDiff + 1;
-                                result = Math.max(result, length * length);
-                            }
-                        }
+                int maxPossibleSize = Math.min(N - i, M - j);
+                for (int size = maxSize; size < maxPossibleSize; size++) {
+                    int target = grid[i][j];
+                    int topRight = grid[i][j + size];
+                    int bottomLeft = grid[i + size][j];
+                    int bottomRight = grid[i + size][j + size];
+                    if (topRight == target && bottomLeft == target && bottomRight == target) {
+                        maxSize = size + 1;
                     }
                 }
-
             }
         }
-        System.out.println(result);
+        System.out.println(maxSize * maxSize);
     }
 }
