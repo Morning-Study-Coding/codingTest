@@ -75,7 +75,6 @@ public class BJN_2573 {
                 for(int j=0; j<width; j++){
                     if(grid[i][j]!=0){
 
-                        bfs()
                     }
                 }
             }
